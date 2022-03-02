@@ -1024,7 +1024,7 @@ GameObject:
   - component: {fileID: 5056028858821721877}
   - component: {fileID: 4868246975979095949}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Skeleton
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1079,9 +1079,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95c32742c4360204b96c39f64a5f6a3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eState: 0
   hpBar: {fileID: 4057839292176494874}
-  hp: 100
   chaseMaxDistance: 20
 --- !u!54 &4868246975979095950
 Rigidbody:

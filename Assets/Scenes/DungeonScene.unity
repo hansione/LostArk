@@ -486,7 +486,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4868246976322976077, guid: 96359a58fc089084ea080e7bd3873edb, type: 3}
       propertyPath: m_Name
-      value: Enemy (1)
+      value: Skeleton
       objectReference: {fileID: 0}
     - target: {fileID: 4868246976322976077, guid: 96359a58fc089084ea080e7bd3873edb, type: 3}
       propertyPath: m_IsActive
@@ -571,6 +571,7 @@ GameObject:
   - component: {fileID: 238427501}
   - component: {fileID: 238427500}
   - component: {fileID: 238427499}
+  - component: {fileID: 238427503}
   m_Layer: 0
   m_Name: BossZone
   m_TagString: Untagged
@@ -586,7 +587,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 238427498}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -654,6 +655,22 @@ Transform:
   m_Father: {fileID: 1371296157}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &238427503
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 238427498}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &389292429
 GameObject:
   m_ObjectHideFlags: 0
@@ -3381,8 +3398,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2112659505}
-  m_LocalRotation: {x: -0.40068597, y: -0.2979507, z: 0.13991465, w: -0.85504395}
-  m_LocalPosition: {x: -50.07, y: 10.738606, z: -94.65}
+  m_LocalRotation: {x: -0.46986547, y: -0.02185419, z: 0.011983199, w: -0.8823861}
+  m_LocalPosition: {x: -51.337082, y: 10.722711, z: -52.3475}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3417,7 +3434,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4868246976322976077, guid: 96359a58fc089084ea080e7bd3873edb, type: 3}
       propertyPath: m_Name
-      value: Enemy
+      value: Skeleton1
       objectReference: {fileID: 0}
     - target: {fileID: 4868246976322976077, guid: 96359a58fc089084ea080e7bd3873edb, type: 3}
       propertyPath: m_IsActive

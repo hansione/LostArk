@@ -180,7 +180,6 @@ public class Skeleton : Enemy
             return;
         }
 
-        print("dddddd");
         hp -= damage;
 
         agent.ResetPath();

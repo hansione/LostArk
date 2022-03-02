@@ -42,15 +42,6 @@ public class Player : MonoBehaviour
             GameManager.Instance.isBoss = true;
         }
 
-
-        if (pState == PlayerState.Attack)
-        {
-            if (other.tag.Equals("Enemy"))
-            {
-                other.gameObject.GetComponent<Enemy>().Damaged(attackDamage);
-            }
-        }
-
     }
 
     private void OnTriggerStay(Collider other)
@@ -60,6 +51,15 @@ public class Player : MonoBehaviour
             agent.stoppingDistance = 2f;
             agent.isStopped = true;
             agent.ResetPath();
+        }
+
+        if (pState == PlayerState.Attack)
+        {
+            print(other.gameObject);
+            if (other.gameObject.tag == "Enemy")
+            {
+                other.gameObject.GetComponent<Enemy>().Damaged(attackDamage);
+            }
         }
     }
 
@@ -76,11 +76,11 @@ public class Player : MonoBehaviour
         pState = PlayerState.Idle;
     }
 
+
     // Update is called once per frame
     void Update()
     {
         anyState();
-
 
         switch (pState)
         {
