@@ -29,6 +29,7 @@ public class NPC : MonoBehaviour
         if (Vector3.Distance(player.position, transform.position) < 5f)
         {
             UIManager.Instance.SelectStart();
+            image.SetActive(false);
         }
     }
 }
