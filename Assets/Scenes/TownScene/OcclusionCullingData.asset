@@ -1,0 +1,478 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!363 &36300000
+OcclusionCullingData:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: OcclusionCullingData
+  m_PVSData: 120000d62634bac6d00200000000a04100000000000020c20000a0c1000020c2000020420000a0410000a041200000005001000000000000010000006001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000a001000000000000900100000100000001000000010000007001000080010000c0010000000000000000000000000000000000000000000000000000542032302e3020534f20352e3020534820302e323530204246203130302046203020435320302e30202d20332e332e3232204620302030204f4720300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003000000000000000000000000000000ffff7f7f00000000000000000000000001000000000000000000000000000000a29b384000000000000000000000000000000000010000000000000000000000000000000000000000000000ffff0000ffffffff000000000000000000000000d0010000000000000000000000000000000020c20000a0c1000020c2000020420000a0410000a04121000000e0000000f00000000000000000000000010001000000203f0100010050000000800000000000000000000000000000000000000000000000060000000000000000000000000000000000000000000000ffff0000ffffffff000000000000000000000000ffffff1300000000ffff0000ffff0000ffffff33ffff0000ffff0000ffff0000ffffff5300000000ffff0000ffff0000ffffff73ffff0000ffff0000ffff0000ffffff9300000000ffff0000ffff0000ffffffb3ffff0000ffff0000ffff00000300000000000000000000000000000000000000000000000000000000000000
+  m_Scenes:
+  - indexRenderers: 0
+    sizeRenderers: 230
+    indexPortals: 0
+    sizePortals: 0
+    scene: fa06cc529cb37b341ae0890e82c155d8
+  m_StaticRenderers:
+  - targetObject: 2300000
+    targetPrefab: 2133196557
+  - targetObject: 2300000
+    targetPrefab: 2131111709
+  - targetObject: 2391466
+    targetPrefab: 2096576244
+  - targetObject: 2300000
+    targetPrefab: 2088377978
+  - targetObject: 2381656
+    targetPrefab: 2080049607
+  - targetObject: 2300000
+    targetPrefab: 2076346339
+  - targetObject: 2389140
+    targetPrefab: 2060888629
+  - targetObject: 2300000
+    targetPrefab: 2041461626
+  - targetObject: 2389140
+    targetPrefab: 2037171800
+  - targetObject: 2326786
+    targetPrefab: 2017681230
+  - targetObject: 2381656
+    targetPrefab: 2007913313
+  - targetObject: 2391466
+    targetPrefab: 2006871793
+  - targetObject: 2381656
+    targetPrefab: 2002172158
+  - targetObject: 2300000
+    targetPrefab: 1996958555
+  - targetObject: 2381656
+    targetPrefab: 1995315564
+  - targetObject: 2300000
+    targetPrefab: 1985602762
+  - targetObject: 2391466
+    targetPrefab: 1960156796
+  - targetObject: 2381656
+    targetPrefab: 1959037077
+  - targetObject: 2381656
+    targetPrefab: 1944130037
+  - targetObject: 2381656
+    targetPrefab: 1940548751
+  - targetObject: 2352178
+    targetPrefab: 1937874724
+  - targetObject: 2361636
+    targetPrefab: 1931411345
+  - targetObject: 2346784
+    targetPrefab: 1911305442
+  - targetObject: 2328316
+    targetPrefab: 1902130651
+  - targetObject: 2381656
+    targetPrefab: 1897188881
+  - targetObject: 2328316
+    targetPrefab: 1887328912
+  - targetObject: 2381656
+    targetPrefab: 1884742427
+  - targetObject: 2313552
+    targetPrefab: 1875891094
+  - targetObject: 2300000
+    targetPrefab: 1866980938
+  - targetObject: 2340152
+    targetPrefab: 1848609089
+  - targetObject: 2389140
+    targetPrefab: 1845047330
+  - targetObject: 2381656
+    targetPrefab: 1814663520
+  - targetObject: 2300000
+    targetPrefab: 1810164675
+  - targetObject: 2329934
+    targetPrefab: 1790655253
+  - targetObject: 2361636
+    targetPrefab: 1773668386
+  - targetObject: 2381656
+    targetPrefab: 1737976893
+  - targetObject: 2389140
+    targetPrefab: 1737937428
+  - targetObject: 2391466
+    targetPrefab: 1707359844
+  - targetObject: 2300000
+    targetPrefab: 1702118874
+  - targetObject: 2381656
+    targetPrefab: 1697968904
+  - targetObject: 2300000
+    targetPrefab: 1688623425
+  - targetObject: 2381656
+    targetPrefab: 1688078870
+  - targetObject: 2391466
+    targetPrefab: 1686495603
+  - targetObject: 2352178
+    targetPrefab: 1675456248
+  - targetObject: 2391466
+    targetPrefab: 1674978432
+  - targetObject: 2381656
+    targetPrefab: 1668726162
+  - targetObject: 2300000
+    targetPrefab: 1664634884
+  - targetObject: 2300000
+    targetPrefab: 1661877951
+  - targetObject: 2300000
+    targetPrefab: 1656305488
+  - targetObject: 2389140
+    targetPrefab: 1639049052
+  - targetObject: 2381656
+    targetPrefab: 1627215153
+  - targetObject: 2381656
+    targetPrefab: 1623364825
+  - targetObject: 2346784
+    targetPrefab: 1596673625
+  - targetObject: 2300000
+    targetPrefab: 1580228646
+  - targetObject: 2357342
+    targetPrefab: 1570134446
+  - targetObject: 2381656
+    targetPrefab: 1537850820
+  - targetObject: 2300000
+    targetPrefab: 1536951947
+  - targetObject: 2300000
+    targetPrefab: 1521014237
+  - targetObject: 2346784
+    targetPrefab: 1484035575
+  - targetObject: 2300000
+    targetPrefab: 1482342214
+  - targetObject: 2381656
+    targetPrefab: 1480157979
+  - targetObject: 2391466
+    targetPrefab: 1478400881
+  - targetObject: 2381656
+    targetPrefab: 1476837821
+  - targetObject: 2381656
+    targetPrefab: 1468123936
+  - targetObject: 2391466
+    targetPrefab: 1467621100
+  - targetObject: 2381656
+    targetPrefab: 1453613475
+  - targetObject: 2386278
+    targetPrefab: 1451323152
+  - targetObject: 2389140
+    targetPrefab: 1449218855
+  - targetObject: 2381656
+    targetPrefab: 1444566562
+  - targetObject: 2381656
+    targetPrefab: 1424610826
+  - targetObject: 2381656
+    targetPrefab: 1408166735
+  - targetObject: 2376382
+    targetPrefab: 1405784846
+  - targetObject: 2381656
+    targetPrefab: 1392005555
+  - targetObject: 2381656
+    targetPrefab: 1388356695
+  - targetObject: 2328316
+    targetPrefab: 1386391743
+  - targetObject: 2381656
+    targetPrefab: 1385314053
+  - targetObject: 2389140
+    targetPrefab: 1381623196
+  - targetObject: 2381656
+    targetPrefab: 1376730797
+  - targetObject: 2381656
+    targetPrefab: 1349642197
+  - targetObject: 2300000
+    targetPrefab: 1348344054
+  - targetObject: 2381656
+    targetPrefab: 1344796358
+  - targetObject: 2391466
+    targetPrefab: 1333577551
+  - targetObject: 2300000
+    targetPrefab: 1328698838
+  - targetObject: 2300000
+    targetPrefab: 1320619197
+  - targetObject: 2300000
+    targetPrefab: 1319999732
+  - targetObject: 2353852
+    targetPrefab: 1316217253
+  - targetObject: 2381656
+    targetPrefab: 1315455606
+  - targetObject: 2300000
+    targetPrefab: 1290214117
+  - targetObject: 2389140
+    targetPrefab: 1289199096
+  - targetObject: 2300000
+    targetPrefab: 1283625769
+  - targetObject: 2389140
+    targetPrefab: 1273089006
+  - targetObject: 2381656
+    targetPrefab: 1272802736
+  - targetObject: 2331272
+    targetPrefab: 1247318550
+  - targetObject: 2300000
+    targetPrefab: 1237360931
+  - targetObject: 2300000
+    targetPrefab: 1228369936
+  - targetObject: 2389140
+    targetPrefab: 1227421539
+  - targetObject: 2391466
+    targetPrefab: 1207088305
+  - targetObject: 2381656
+    targetPrefab: 1203762399
+  - targetObject: 2381656
+    targetPrefab: 1200388288
+  - targetObject: 2300000
+    targetPrefab: 1193841681
+  - targetObject: 2381656
+    targetPrefab: 1182563507
+  - targetObject: 2346784
+    targetPrefab: 1167406227
+  - targetObject: 2300000
+    targetPrefab: 1165379483
+  - targetObject: 2389140
+    targetPrefab: 1151873343
+  - targetObject: 2356934
+    targetPrefab: 1147567076
+  - targetObject: 2381656
+    targetPrefab: 1146966224
+  - targetObject: 2300000
+    targetPrefab: 1145525213
+  - targetObject: 2313428
+    targetPrefab: 1136653083
+  - targetObject: 2300000
+    targetPrefab: 1134107186
+  - targetObject: 2374672
+    targetPrefab: 1126802959
+  - targetObject: 2300000
+    targetPrefab: 1123702368
+  - targetObject: 2381656
+    targetPrefab: 1121212213
+  - targetObject: 2352178
+    targetPrefab: 1114713498
+  - targetObject: 2381656
+    targetPrefab: 1111369884
+  - targetObject: 2300000
+    targetPrefab: 1096545371
+  - targetObject: 2381656
+    targetPrefab: 1094499108
+  - targetObject: 2300000
+    targetPrefab: 1093176403
+  - targetObject: 2381656
+    targetPrefab: 1062374293
+  - targetObject: 2300000
+    targetPrefab: 1057889684
+  - targetObject: 2300000
+    targetPrefab: 1056559064
+  - targetObject: 2389140
+    targetPrefab: 1029785489
+  - targetObject: 2300000
+    targetPrefab: 1010817538
+  - targetObject: 2389140
+    targetPrefab: 1003524936
+  - targetObject: 2300000
+    targetPrefab: 999668679
+  - targetObject: 2391466
+    targetPrefab: 996129437
+  - targetObject: 2334380
+    targetPrefab: 968927452
+  - targetObject: 2300000
+    targetPrefab: 949135227
+  - targetObject: 2381656
+    targetPrefab: 895265276
+  - targetObject: 2381656
+    targetPrefab: 890355924
+  - targetObject: 2300000
+    targetPrefab: 884189795
+  - targetObject: 2389140
+    targetPrefab: 870539337
+  - targetObject: 2329934
+    targetPrefab: 851145967
+  - targetObject: 2381656
+    targetPrefab: 840497461
+  - targetObject: 2381656
+    targetPrefab: 831018110
+  - targetObject: 2389140
+    targetPrefab: 822459636
+  - targetObject: 2346784
+    targetPrefab: 815490801
+  - targetObject: 2381656
+    targetPrefab: 814843549
+  - targetObject: 2381656
+    targetPrefab: 782366951
+  - targetObject: 2300000
+    targetPrefab: 759965196
+  - targetObject: 2300000
+    targetPrefab: 742644094
+  - targetObject: 2381656
+    targetPrefab: 740762717
+  - targetObject: 2381656
+    targetPrefab: 740449524
+  - targetObject: 2381656
+    targetPrefab: 739377087
+  - targetObject: 2381656
+    targetPrefab: 734814359
+  - targetObject: 2300000
+    targetPrefab: 728660978
+  - targetObject: 2373340
+    targetPrefab: 727639318
+  - targetObject: 2358518
+    targetPrefab: 727639318
+  - targetObject: 2381656
+    targetPrefab: 702180042
+  - targetObject: 2300000
+    targetPrefab: 696873021
+  - targetObject: 2389140
+    targetPrefab: 696272193
+  - targetObject: 2300000
+    targetPrefab: 695805592
+  - targetObject: 2300000
+    targetPrefab: 694397381
+  - targetObject: 2389140
+    targetPrefab: 694296050
+  - targetObject: 2398106
+    targetPrefab: 689405872
+  - targetObject: 2398106
+    targetPrefab: 688520166
+  - targetObject: 2309774
+    targetPrefab: 663136510
+  - targetObject: 2300000
+    targetPrefab: 660890027
+  - targetObject: 2381656
+    targetPrefab: 653709335
+  - targetObject: 2381656
+    targetPrefab: 651573236
+  - targetObject: 2335598
+    targetPrefab: 644428591
+  - targetObject: 2329934
+    targetPrefab: 637006375
+  - targetObject: 2389140
+    targetPrefab: 624042714
+  - targetObject: 2305012
+    targetPrefab: 617827775
+  - targetObject: 2389140
+    targetPrefab: 605823729
+  - targetObject: 2381656
+    targetPrefab: 605066633
+  - targetObject: 2381656
+    targetPrefab: 573981128
+  - targetObject: 2387352
+    targetPrefab: 569098624
+  - targetObject: 2381656
+    targetPrefab: 564846353
+  - targetObject: 2381656
+    targetPrefab: 559001537
+  - targetObject: 2352178
+    targetPrefab: 543702122
+  - targetObject: 2346784
+    targetPrefab: 540367147
+  - targetObject: 2389758
+    targetPrefab: 528951884
+  - targetObject: 2381656
+    targetPrefab: 518310558
+  - targetObject: 2374672
+    targetPrefab: 505018298
+  - targetObject: 2381656
+    targetPrefab: 493303790
+  - targetObject: 2381656
+    targetPrefab: 488334564
+  - targetObject: 2329934
+    targetPrefab: 487009775
+  - targetObject: 2381656
+    targetPrefab: 460571440
+  - targetObject: 2329934
+    targetPrefab: 441527412
+  - targetObject: 2300000
+    targetPrefab: 440062771
+  - targetObject: 2322322
+    targetPrefab: 438741404
+  - targetObject: 2324754
+    targetPrefab: 417926169
+  - targetObject: 2389140
+    targetPrefab: 411967815
+  - targetObject: 2381656
+    targetPrefab: 405082549
+  - targetObject: 2300000
+    targetPrefab: 367123107
+  - targetObject: 2300000
+    targetPrefab: 366084445
+  - targetObject: 2386278
+    targetPrefab: 365957039
+  - targetObject: 2381656
+    targetPrefab: 362138770
+  - targetObject: 2300000
+    targetPrefab: 333219487
+  - targetObject: 2381656
+    targetPrefab: 329310358
+  - targetObject: 2300000
+    targetPrefab: 327341778
+  - targetObject: 2394102
+    targetPrefab: 319379620
+  - targetObject: 2334610
+    targetPrefab: 319379620
+  - targetObject: 2381656
+    targetPrefab: 300685642
+  - targetObject: 2389140
+    targetPrefab: 294405962
+  - targetObject: 2381656
+    targetPrefab: 294351738
+  - targetObject: 2300000
+    targetPrefab: 292822357
+  - targetObject: 2389140
+    targetPrefab: 286688278
+  - targetObject: 2381656
+    targetPrefab: 268025219
+  - targetObject: 2389140
+    targetPrefab: 263652203
+  - targetObject: 2300000
+    targetPrefab: 260853500
+  - targetObject: 2300000
+    targetPrefab: 256292657
+  - targetObject: 2381656
+    targetPrefab: 249275960
+  - targetObject: 2346784
+    targetPrefab: 239802588
+  - targetObject: 2381656
+    targetPrefab: 228426331
+  - targetObject: 2300000
+    targetPrefab: 223194968
+  - targetObject: 2300000
+    targetPrefab: 192359515
+  - targetObject: 2346850
+    targetPrefab: 187852484
+  - targetObject: 2381656
+    targetPrefab: 162929549
+  - targetObject: 2300000
+    targetPrefab: 154158968
+  - targetObject: 2300000
+    targetPrefab: 146650601
+  - targetObject: 2300000
+    targetPrefab: 127403771
+  - targetObject: 2381656
+    targetPrefab: 123538615
+  - targetObject: 2397848
+    targetPrefab: 122799115
+  - targetObject: 2329934
+    targetPrefab: 109936691
+  - targetObject: 2300000
+    targetPrefab: 81878271
+  - targetObject: 2300000
+    targetPrefab: 73097360
+  - targetObject: 2300000
+    targetPrefab: 69739808
+  - targetObject: 2300000
+    targetPrefab: 69711092
+  - targetObject: 2381656
+    targetPrefab: 64585049
+  - targetObject: 2300000
+    targetPrefab: 53342229
+  - targetObject: 2381656
+    targetPrefab: 52742246
+  - targetObject: 2381656
+    targetPrefab: 52285028
+  - targetObject: 2300000
+    targetPrefab: 37792122
+  - targetObject: 2381656
+    targetPrefab: 37618462
+  - targetObject: 2389140
+    targetPrefab: 35732472
+  - targetObject: 2381656
+    targetPrefab: 29176752
+  - targetObject: 2366286
+    targetPrefab: 23979219
+  - targetObject: 2300000
+    targetPrefab: 17055952
+  - targetObject: 2300000
+    targetPrefab: 11194565
+  m_Portals: []
