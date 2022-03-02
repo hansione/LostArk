@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IDropHandler, IEndDragHandler
+public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IDropHandler, IEndDragHandler, IPointerClickHandler
 {
     // Ä¸½¶È­
     public Item item;
@@ -14,7 +14,6 @@ public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IDropHandler
     public int itemCount = 0;
 
     public Container container;
-    bool isDrag = false;
 
     private void Start()
     {
@@ -73,10 +72,10 @@ public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IDropHandler
             return;
         }
 
-        isDrag = true;
         itemImage.gameObject.SetActive(false);
         container.gameObject.SetActive(true);
 
+        container.isDrag = true;
         container.item = item;
         container.img.sprite = itemImage.sprite;
         container.itemCount = itemCount;
@@ -84,12 +83,23 @@ public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IDropHandler
 
     public void OnDrag(PointerEventData eventData)
     {
+        if(!container.isDrag)
+        {
+            return;
+        }
+
         container.transform.position = eventData.position;
+        
     }
 
     public void OnDrop(PointerEventData eventData)
     {
-        if(item != null)
+        if (!container.isDrag)
+        {
+            return;
+        }
+
+        if (item != null)
         {
             Item tempItem = item;
             item = container.item;
@@ -110,12 +120,17 @@ public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IDropHandler
             itemCount = container.itemCount;
             SetAlpha(1);
         }
-
-
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        if (!container.isDrag)
+        {
+            return;
+        }
+
+        container.isDrag = false;
+
         itemImage.gameObject.SetActive(true);
 
         if(item == container.item)
@@ -128,6 +143,19 @@ public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IDropHandler
         }
 
         container.gameObject.SetActive(false);
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if(Inven.Instance.isShopUse)
+        {
+            Inven.Instance.Money += item.itemPrice;
+            removeItem();
+        }
+        else
+        {
+
+        }
 
     }
 }

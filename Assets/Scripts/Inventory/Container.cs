@@ -8,4 +8,7 @@ public class Container : MonoBehaviour
     public Item item;
     public Image img;
     public int itemCount;
+
+    public bool isDrag;
+
 }

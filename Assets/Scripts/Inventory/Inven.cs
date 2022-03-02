@@ -17,6 +17,8 @@ public class Inven : MonoBehaviour
 
     public Slot[] slots;
 
+    public bool isShopUse = false;
+
     private void Awake()
     {
         if (Instance == null)

@@ -36,12 +36,15 @@ public class UIManager : MonoBehaviour
         shopImage.SetActive(true);
         InvenImage.SetActive(true);
 
+        Inven.Instance.isShopUse = true;
     }
 
     // 상점 창 끄기 버튼
     public void ShopExitButton()
     {
         shopImage.SetActive(false);
+
+        Inven.Instance.isShopUse = false;
     }
 
     // 퀘스트 창 열기
