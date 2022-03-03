@@ -36,6 +36,7 @@ public class UIManager : MonoBehaviour
         shopImage.SetActive(true);
         InvenImage.SetActive(true);
 
+        Inven.Instance.isActived = true;
         Inven.Instance.isShopUse = true;
     }
 

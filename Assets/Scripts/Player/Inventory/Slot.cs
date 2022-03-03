@@ -15,6 +15,8 @@ public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IDropHandler
 
     public Container container;
 
+    public EItemType slotType;
+
     private void Start()
     {
         container = GameObject.Find("Container").GetComponent<Container>();
@@ -36,7 +38,7 @@ public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IDropHandler
         itemImage.sprite = addItem.itemImage;
         itemCount = count;
 
-        if (!item.iType.Equals(Item.EItemType.Weapon))
+        if (item.iType.Equals(EItemType.Weapon))
         {
             textCount.text = itemCount.ToString();
         }
@@ -101,47 +103,54 @@ public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IDropHandler
 
         if (item != null)
         {
-            Item tempItem = item;
-            item = container.item;
-            container.item = tempItem;
+            if (slotType.Equals(EItemType.None) ||
+                slotType.Equals(container.item.iType))
+            {
+                Item tempItem = item;
+                item = container.item;
+                container.item = tempItem;
 
-            Sprite tempSprite = itemImage.sprite;
-            itemImage.sprite = container.img.sprite;
-            container.img.sprite = tempSprite;
+                Sprite tempSprite = itemImage.sprite;
+                itemImage.sprite = container.img.sprite;
+                container.img.sprite = tempSprite;
 
-            int tempCount = itemCount;
-            itemCount = container.itemCount;
-            container.itemCount = tempCount;
+                int tempCount = itemCount;
+                itemCount = container.itemCount;
+                container.itemCount = tempCount;
+            }
+            
         }
         else
         {
-            item = container.item;
-            itemImage.sprite = container.img.sprite;
-            itemCount = container.itemCount;
-            SetAlpha(1);
+            if(slotType.Equals(EItemType.None) ||
+               slotType.Equals(container.item.iType))
+            {
+                item = container.item;
+                itemImage.sprite = container.img.sprite;
+                itemCount = container.itemCount;
+                SetAlpha(1);
+
+                container.isDrag = false;
+            }
         }
     }
 
     public void OnEndDrag(PointerEventData eventData)
-    {
-        if (!container.isDrag)
-        {
-            return;
-        }
-
-        container.isDrag = false;
+    {      
 
         itemImage.gameObject.SetActive(true);
 
-        if(item == container.item)
+        if (item == container.item)
         {
-            removeItem();
+            if (!container.isDrag) removeItem();
         }
         else
         {
             Add(container.item, container.itemCount);
         }
 
+
+        container.isDrag = false;
         container.gameObject.SetActive(false);
     }
 
@@ -152,10 +161,5 @@ public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IDropHandler
             Inven.Instance.Money += item.itemPrice;
             removeItem();
         }
-        else
-        {
-
-        }
-
     }
 }

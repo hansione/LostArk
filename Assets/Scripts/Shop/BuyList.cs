@@ -9,10 +9,15 @@ public class BuyList : MonoBehaviour
     List<Item> buySlots = new List<Item>();
     public Image[] buySlotImage;
 
+    public GameObject shopSymbol;
+
     // Update is called once per frame
     void Update()
     {
         buy();
+
+        shopSymbol.SetActive(gameObject.activeSelf);
+        
     }
 
     void buy()

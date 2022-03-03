@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba1c499404abcc04e8824456e3a8d483, type: 3}
   m_Name: Portion
   m_EditorClassIdentifier: 
-  iType: 1
+  iType: 3
   itemImage: {fileID: 0}
   itemPrice: 50
