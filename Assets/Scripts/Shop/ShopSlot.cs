@@ -10,6 +10,7 @@ public class ShopSlot : MonoBehaviour, IPointerClickHandler
 
     public Image itemImage;
     public Text textPrice;
+    public Text itemInfo;
 
     public BuyList buyList;
 
@@ -23,6 +24,7 @@ public class ShopSlot : MonoBehaviour, IPointerClickHandler
     {
         textPrice.text = item.itemPrice.ToString();
         itemImage.sprite = item.itemImage;
+        itemInfo.text = item.itemInfo;
     }
 
 }
