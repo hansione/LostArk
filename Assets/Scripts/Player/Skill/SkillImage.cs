@@ -53,25 +53,8 @@ public class SkillImage : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         SkillInfo info = GameManager.Instance.skilInfo;
 
         info.gameObject.SetActive(true);
-        info.image.sprite = image.sprite;
+        info.skill = this;
 
-        switch (skill.type)
-        {
-            case SkillData.Type.Normal:
-                info.type.text = "일반 스킬";
-                break;
-
-            case SkillData.Type.Magic:
-                info.type.text = "마법 스킬";
-                break;
-
-            case SkillData.Type.Holding:
-                info.type.text = "홀딩 스킬";
-                break;
-        }
-
-        info.coolTime.text = skill.cooltime.ToString() +"s";
-        info.info.text = skill.skillInfo;
     }
 
     public void OnPointerExit(PointerEventData eventData)
