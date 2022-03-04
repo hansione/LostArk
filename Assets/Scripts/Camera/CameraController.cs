@@ -7,11 +7,27 @@ public class CameraController : MonoBehaviour
     Transform player;
 
     // 플레이어 - 카메라 위치
-    Vector3 dir;
+    public Vector3 dir;
+
+    private void Awake()
+    {
+        var obj = FindObjectsOfType<CameraController>();
+
+        if (obj.Length == 1)
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+    }
 
     private void Start()
     {
         player = GameObject.Find("Player").transform;
+
         // 초기에 설정된 카메라 위치 고정
         dir = player.position - transform.position;
     }

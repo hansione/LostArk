@@ -6,21 +6,34 @@ using UnityEngine.UI;
 
 public class NPC : MonoBehaviour
 {
-    public Transform player;
+    Transform player;
 
-    public GameObject image;
+    public GameObject mark;
+
+    public GameObject shopSymbol;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
 
     private void Update()
     {
-        image.transform.position = Camera.main.WorldToScreenPoint(transform.position + Vector3.up * 4.5f + Vector3.right * 0.2f);
+        shopSymbol.SetActive(UIManager.Instance.shopImage.activeSelf);
+
+        mark.transform.position = Camera.main.WorldToScreenPoint(transform.position + Vector3.up * 4.5f + Vector3.right * 0.2f);
 
         if (Vector3.Distance(player.position, transform.position) < 5f)
         {
-            image.SetActive(true);
+            if((GameManager.Instance.isQuestButton && GameManager.Instance.isQuestComplete) ||
+               !GameManager.Instance.isQuestButton)
+            {
+                mark.SetActive(true);
+            }
         }
         else
         {
-            image.SetActive(false);
+            mark.SetActive(false);
         }
     }
 
@@ -29,7 +42,7 @@ public class NPC : MonoBehaviour
         if (Vector3.Distance(player.position, transform.position) < 5f)
         {
             UIManager.Instance.SelectStart();
-            image.SetActive(false);
+            mark.SetActive(false);
         }
     }
 }

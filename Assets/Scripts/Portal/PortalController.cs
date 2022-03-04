@@ -3,22 +3,40 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public enum ESceneTag
+{
+    Town,
+    Dungeon
+}
+
 public class PortalController : MonoBehaviour
 {
-    public enum ESceneTag
+    public ESceneTag scene;
+
+    [SerializeField]
+    GameObject player;
+
+    private void Start()
     {
-        Town,
-        Dungeon
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    public ESceneTag scene;
+    private void Update()
+    {
+        if(GameManager.Instance.isPortal)
+        {
+            gameObject.SetActive(false);
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.name.Equals("Player"))
+        if(other.gameObject.Equals(player))
         {
-            other.transform.position = new Vector3(-46f , 0f, -87f);
+            player.transform.position = new Vector3(-46f, 0f, -87f);
             MoveScene();
+
+            GameManager.Instance.isPortal = true;
         }
     }
 

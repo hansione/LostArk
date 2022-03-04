@@ -14,13 +14,30 @@ public class UIManager : MonoBehaviour
 
     public GameObject questPanel;
     public Text text;
-    bool isQuestConfirm = false;
+    public GameObject NoQuest;
 
     public GameObject resultImage;
 
+
     private void Awake()
     {
-        if (Instance == null) Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
+
+    private void Update()
+    {
+        if(resultImage == null)
+        {
+            resultImage = GameObject.Find("Result");
+        }
+
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            questPanel.SetActive(!questPanel.activeSelf);
+        }
     }
 
     // 선택 창 열기
@@ -53,6 +70,12 @@ public class UIManager : MonoBehaviour
     {
         selectPanel.SetActive(false);
         questPanel.SetActive(true);
+
+        if (GameManager.Instance.isQuestButton && GameManager.Instance.isQuestComplete)
+        {
+            text.text = "완료";
+        }
+
     }
 
     // 퀘스트 창 끄기 버튼
@@ -64,17 +87,25 @@ public class UIManager : MonoBehaviour
     // 퀘스트 수락하기 버튼
     public void QuestAcceptButton()
     {
-        if (isQuestConfirm)
+        if(text.text.Equals("완료"))
         {
-            isQuestConfirm = false;
+            QuestExitButton();
+            questPanel = NoQuest;
+
+            GameManager.Instance.isQuestComplete = false;
+            return;
+        }
+
+        if (GameManager.Instance.isQuestButton)
+        {
+            GameManager.Instance.isQuestButton = false;
             text.text = "수락";
         }
         else
         {
-            isQuestConfirm = true;
+            GameManager.Instance.isQuestButton = true;
             text.text = "취소";
         }
-
     }
 
     public void ResultImage()

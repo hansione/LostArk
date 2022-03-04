@@ -18,7 +18,6 @@ public class Skeleton : Enemy
 
     EnemyState eState;
 
-
     float findDistance = 6f;
 
     float currentTime = 0f;
@@ -182,6 +181,7 @@ public class Skeleton : Enemy
 
         hp -= damage;
 
+        agent.isStopped = true;
         agent.ResetPath();
 
         if (hp > 0)
@@ -202,5 +202,4 @@ public class Skeleton : Enemy
         anim.SetTrigger("Die");
         hpBar.gameObject.SetActive(false);
     }
-
 }

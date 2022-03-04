@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
     RaycastHit hit;
 
     Camera camera;
-    NavMeshAgent agent;
+    public NavMeshAgent agent;
     Animator anim;
     Skill skill;
 
@@ -35,13 +35,10 @@ public class Player : MonoBehaviour
    
     private void OnTriggerEnter(Collider other)
     {
-
         if(other.gameObject.name.Equals("BossZoneTrigger"))
         {
-            print(other.gameObject);
-            GameManager.Instance.isBoss = true;
+            other.gameObject.GetComponent<BossTrigger>().isBoss = true;
         }
-
     }
 
     private void OnTriggerStay(Collider other)
@@ -63,6 +60,21 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void Awake()
+    {
+        Player[] obj = FindObjectsOfType<Player>();
+
+        if (obj.Length == 1)
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+
+        if (obj.Length != 1)
+        {
+            obj[0].gameObject.transform.position = new Vector3(0f, 0f, -12.39f);
+            Destroy(gameObject);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -74,6 +86,7 @@ public class Player : MonoBehaviour
         skill = GetComponent<Skill>();
 
         pState = PlayerState.Idle;
+
     }
 
 
@@ -115,8 +128,7 @@ public class Player : MonoBehaviour
 
         setHpBar();
 
-        DontDestroyOnLoad(this);
-        DontDestroyOnLoad(camera);
+        if (!CharacterStart.isStart) agent.ResetPath();
     }
 
     void setHpBar()

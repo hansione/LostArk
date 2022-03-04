@@ -164,5 +164,10 @@ public class Boss : Enemy
     void die()
     {
         UIManager.Instance.ResultImage();
+
+        if (GameManager.Instance.isQuestButton)
+        {
+            GameManager.Instance.isQuestComplete = true;
+        }
     }
 }
