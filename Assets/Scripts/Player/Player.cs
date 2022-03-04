@@ -52,7 +52,6 @@ public class Player : MonoBehaviour
 
         if (pState == PlayerState.Attack)
         {
-            print(other.gameObject);
             if (other.gameObject.tag == "Enemy")
             {
                 other.gameObject.GetComponent<Enemy>().Damaged(attackDamage);

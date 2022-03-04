@@ -169,5 +169,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: b12ae1813ad4af14091f070d278fd994, type: 2}
+  image: {fileID: 3788418690965441724}
   countText: {fileID: 3788418689904406317}
-  isUse: 0
+  skillInfo: {fileID: 0}

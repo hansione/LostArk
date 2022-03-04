@@ -17,3 +17,5 @@ MonoBehaviour:
   damage: 30
   cooltime: 3
   isUse: 0
+  skillInfo: "\uC804\uBC29\uC73C\uB85C \uC544\uC774\uC2A4\uBCFC\uC774 \uB098\uC544\uAC00\uBA70
+    30\uC758 \uB370\uBBF8\uC9C0\uB97C \uC900\uB2E4."
