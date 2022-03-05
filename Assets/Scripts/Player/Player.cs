@@ -165,6 +165,12 @@ public class Player : MonoBehaviour
                 anim.SetTrigger("Roll");
 
             }
+
+        }
+
+        if(pState == PlayerState.Roll)
+        {
+            transform.Translate(Vector3.forward * 10f * Time.deltaTime);
         }
     }
 
