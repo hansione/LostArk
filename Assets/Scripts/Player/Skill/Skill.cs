@@ -40,7 +40,7 @@ public class Skill : MonoBehaviour
     }
 
     // 홀딩 스킬 캐스팅 시간
-    private void FixedUpdate()
+    private void Update()
     {
         if (isCasting)
         {
@@ -161,6 +161,17 @@ public class Skill : MonoBehaviour
 
             castingBar.gameObject.SetActive(false);
             castingBar.value = 0;
+        }
+    }
+
+    public void NormalSkill(Animator anim)
+    {
+        if (skillNum == 0)
+        { 
+            if(Input.GetKeyDown(keyList[skillNum]))
+            {
+                anim.SetInteger("AtkCount", 1);
+            }
         }
     }
 

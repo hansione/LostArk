@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     }
 
     public PlayerState pState;
+
     Vector3 moveDir;
     RaycastHit hit;
 
@@ -189,6 +190,7 @@ public class Player : MonoBehaviour
             pState = PlayerState.Walk;
         }
 
+        
         // АјАн
         if (skill.IsKey())
         {
@@ -197,7 +199,17 @@ public class Player : MonoBehaviour
             agent.ResetPath();
             anim.SetTrigger("Attack");
             pState = PlayerState.Attack;
-            attack();
+            skillAttack();
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            isAttack = true;
+
+            agent.ResetPath();
+            anim.SetTrigger("Attack");
+            pState = PlayerState.Attack;
+            normalSkill();
         }
     }
 
@@ -228,7 +240,16 @@ public class Player : MonoBehaviour
             agent.ResetPath();
             anim.SetTrigger("Attack");
             pState = PlayerState.Attack;
-            attack();
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            isAttack = true;
+
+            agent.ResetPath();
+            anim.SetTrigger("Attack");
+            pState = PlayerState.Attack;
+            normalSkill();
         }
     }
 
@@ -251,24 +272,36 @@ public class Player : MonoBehaviour
         {
             pState = PlayerState.Walk;
         }
+
+        if(pState == PlayerState.Attack)
+        {
+            skill.NormalSkill(anim);
+        }
     }
 
-    void attack()
+    void normalSkill()
     {
         if (Physics.Raycast(camera.ScreenPointToRay(Input.mousePosition), out hit))
         {
             transform.forward = hit.point - transform.position;
         }
 
-        anim.SetInteger("AtkNum", skill.skillNum);
-        attackDamage = skill.skillSet[skill.skillNum].damage;
-        skill.StartEffect();
+        anim.SetInteger("AtkNum", -1);
+        attackDamage = 10;
 
-        if(Input.GetMouseButtonDown(0))
+    }
+
+    void skillAttack()
+    {
+        if (Physics.Raycast(camera.ScreenPointToRay(Input.mousePosition), out hit))
         {
-            
-        }
+            transform.forward = hit.point - transform.position;
+        }      
+        
 
+        anim.SetInteger("AtkNum", skill.skillNum);
+        //attackDamage = skill.skillSet[skill.skillNum].damage;
+        skill.StartEffect();
     }
 
     public void Damaged(float damage, int damagedAnim)
