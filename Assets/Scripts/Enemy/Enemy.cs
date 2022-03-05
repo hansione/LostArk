@@ -36,7 +36,9 @@ public class Enemy : MonoBehaviour
         if (other.tag.Equals("Skill"))
         {
             other.tag = "Untagged";
-            Damaged(20f);
+
+            Skill skill = player.gameObject.GetComponent<Skill>();            
+            Damaged(skill.skillSet[skill.skillNum].damage);
         }
 
         if (isAttack)

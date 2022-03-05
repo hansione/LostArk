@@ -55,6 +55,7 @@ public class Player : MonoBehaviour
             if (other.gameObject.tag == "Enemy")
             {
                 other.gameObject.GetComponent<Enemy>().Damaged(attackDamage);
+                isAttack = false;
             }
         }
     }
@@ -163,9 +164,7 @@ public class Player : MonoBehaviour
 
                 pState = PlayerState.Roll;
                 anim.SetTrigger("Roll");
-
             }
-
         }
 
         if(pState == PlayerState.Roll)
@@ -186,6 +185,8 @@ public class Player : MonoBehaviour
         // 공격
         if (skill.IsKey())
         {
+            isAttack = true;
+
             agent.ResetPath();
             anim.SetTrigger("Attack");
             pState = PlayerState.Attack;
@@ -210,6 +211,8 @@ public class Player : MonoBehaviour
         // 공격
         if (skill.IsKey())
         {
+            isAttack = true;
+
             agent.ResetPath();
             anim.SetTrigger("Attack");
             pState = PlayerState.Attack;

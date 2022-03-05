@@ -16,6 +16,7 @@ public class Skeleton : Enemy
         Die
     }
 
+    [SerializeField]
     EnemyState eState;
 
     float findDistance = 6f;
@@ -132,9 +133,12 @@ public class Skeleton : Enemy
         }
         else
         {
+            agent.isStopped = true;
+            agent.ResetPath();
+
             anim.SetBool("Attack", false);
 
-            if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+            if(anim.GetNextAnimatorStateInfo(0).IsName("Chase"))
             {
                 eState = EnemyState.Chase;
                 currentTime = 0f;
