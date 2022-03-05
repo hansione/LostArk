@@ -240,6 +240,7 @@ public class Player : MonoBehaviour
             agent.ResetPath();
             anim.SetTrigger("Attack");
             pState = PlayerState.Attack;
+            skillAttack();
         }
 
         if (Input.GetMouseButtonDown(0))

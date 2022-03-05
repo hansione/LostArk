@@ -122,7 +122,6 @@ public class Skill : MonoBehaviour
         yield return new WaitForSeconds(skillSet[num].cooltime - 2f);
 
         skillSet[num].isUse = false;
-
     }
 
     // 홀딩 스킬 활성화
@@ -160,6 +159,8 @@ public class Skill : MonoBehaviour
 
             castingBar.gameObject.SetActive(false);
             castingBar.value = 0;
+
+            Camera.main.GetComponent<CameraMove>().isMove = true;
         }
     }
 

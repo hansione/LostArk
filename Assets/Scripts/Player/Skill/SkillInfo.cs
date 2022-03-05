@@ -25,7 +25,7 @@ public class SkillInfo : MonoBehaviour
 
         switch (skill.skill.type)
         {
-            case SkillData.Type.Normal:
+            case SkillData.Type.Combo:
                 type.text = "일반 스킬";
                 break;
 

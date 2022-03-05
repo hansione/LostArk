@@ -8,7 +8,7 @@ public class SkillData : ScriptableObject
 {
     public enum Type
     {
-        Normal,
+        Combo,
         Magic,
         Holding
     }

@@ -18,7 +18,6 @@ public class SkillImage : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     void Update()
     {
         countText.text = count.ToString("F0");
-        print(coolTimeImage.fillAmount);
 
         if (skill.isUse)
         {            
