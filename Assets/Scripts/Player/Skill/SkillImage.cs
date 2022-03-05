@@ -7,18 +7,23 @@ using UnityEngine.EventSystems;
 public class SkillImage : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public SkillData skill;
+
+    public Image coolTimeImage;
     public Image image;
     public Text countText;
+
     float count;
 
     // Update is called once per frame
     void Update()
     {
         countText.text = count.ToString("F0");
+        print(coolTimeImage.fillAmount);
 
         if (skill.isUse)
         {            
             countText.gameObject.SetActive(true);
+            coolTimeImage.gameObject.SetActive(true);
             time();
 
             changeColor(100f / 255);
@@ -26,13 +31,10 @@ public class SkillImage : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         else
         {
             countText.gameObject.SetActive(false);
+            coolTimeImage.gameObject.SetActive(false);
 
-            count = skill.cooltime + 1;
-
-            if (skill.type.Equals(SkillData.Type.Holding))
-            {
-                count += 0.8f;
-            }
+            count = skill.cooltime;
+            coolTimeImage.fillAmount = 1f;
 
             changeColor(1);
         }
@@ -46,6 +48,7 @@ public class SkillImage : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     void time()
     {
         count -= Time.deltaTime;
+        coolTimeImage.fillAmount = count / skill.cooltime;
     }
 
     public void OnPointerEnter(PointerEventData eventData)

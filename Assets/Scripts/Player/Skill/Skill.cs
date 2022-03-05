@@ -44,7 +44,7 @@ public class Skill : MonoBehaviour
     {
         if (isCasting)
         {
-            Cast(0.8f);
+            Cast(0.7f);
         }
     }
 
@@ -137,26 +137,25 @@ public class Skill : MonoBehaviour
             skillEffect[num].transform.position = startPos.transform.position;
         }
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(skillSet[skillNum].cooltime);
         
         skillEffect[num].tag = "Skill";
         skillEffect[num].SetActive(false);
 
         skillSet[num].isUse = false;
-
     }
 
     // 홀딩 스킬 캐스팅
     public void Cast(float time)
     {
-        skillSet[skillNum].isUse = true;
+        //skillSet[skillNum].isUse = true;
 
         castingBar.value += 1f / (time / 0.02f);
         
         if (castingBar.value == 1)
         {
             StartCoroutine(HoldingSkill());
-
+            skillSet[skillNum].isUse = true;
             isCasting = false;
 
             castingBar.gameObject.SetActive(false);
