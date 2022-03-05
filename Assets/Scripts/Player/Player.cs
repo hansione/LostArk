@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.AI;
 
@@ -139,6 +140,7 @@ public class Player : MonoBehaviour
     // 마우스 좌표
     void setDestination()
     {
+
         if (Physics.Raycast(camera.ScreenPointToRay(Input.mousePosition), out hit))
         {
             agent.SetDestination(hit.point);
@@ -177,6 +179,11 @@ public class Player : MonoBehaviour
     {
         anim.SetBool("Walk", false);
 
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
+
         if (Input.GetMouseButton(1))
         {
             pState = PlayerState.Walk;
@@ -198,14 +205,19 @@ public class Player : MonoBehaviour
     {
         anim.SetBool("Walk", true);
 
-        if (Input.GetMouseButton(1))
-        {            
-            setDestination();
-        }
-
-        if (!Input.GetMouseButton(1) && agent.velocity.magnitude.Equals(0f))
+        if (!Input.GetMouseButton(1) && agent.velocity.magnitude < 0.2f)
         {
             pState = PlayerState.Idle;
+        }
+
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
+
+        if (Input.GetMouseButton(1))
+        {
+            setDestination();
         }
 
         // 공격
@@ -251,6 +263,12 @@ public class Player : MonoBehaviour
         anim.SetInteger("AtkNum", skill.skillNum);
         attackDamage = skill.skillSet[skill.skillNum].damage;
         skill.StartEffect();
+
+        if(Input.GetMouseButtonDown(0))
+        {
+            
+        }
+
     }
 
     public void Damaged(float damage, int damagedAnim)
