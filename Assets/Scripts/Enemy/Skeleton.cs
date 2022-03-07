@@ -76,6 +76,11 @@ public class Skeleton : Enemy
                 break;
         }
 
+        if(player.gameObject.GetComponent<Player>().pState == Player.PlayerState.Die)
+        {
+            eState = EnemyState.Init;
+        }
+
         setHpBar();
     }
 

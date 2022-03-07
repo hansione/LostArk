@@ -10,11 +10,6 @@ public class CameraMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.G))
-        {
-            isMove = true;
-        }
-
         if(isMove)
         {
             MoveAction();

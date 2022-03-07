@@ -21,6 +21,7 @@ public class Enemy : MonoBehaviour
     protected float hp;
     protected float maxHp;
 
+    [SerializeField]
     protected bool isAttack = false;
 
     public void SetStart()
@@ -41,7 +42,8 @@ public class Enemy : MonoBehaviour
             Damaged(skill.skillSet[skill.skillNum].damage);
         }
 
-        if (isAttack)
+
+        if (isAttack && !other.gameObject.name.Equals("Sword_1"))
         {
             isAttack = false;
             if (other.tag.Equals("Player"))

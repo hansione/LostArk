@@ -133,6 +133,8 @@ public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IDropHandler
                 container.isDrag = false;
             }
         }
+
+        container.isEquip = true;
     }
 
     public void OnEndDrag(PointerEventData eventData)

@@ -10,5 +10,5 @@ public class Container : MonoBehaviour
     public int itemCount;
 
     public bool isDrag;
-
+    public bool isEquip;
 }

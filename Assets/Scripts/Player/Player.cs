@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     Animator anim;
     Skill skill;
 
-    public float attackDamage = 15;
+    public float attackDamage;
     bool isAttack = false;
 
     public Slider hpBar;
@@ -88,6 +88,7 @@ public class Player : MonoBehaviour
         skill = GetComponent<Skill>();
 
         pState = PlayerState.Idle;
+        attackDamage = 10;
 
     }
 
