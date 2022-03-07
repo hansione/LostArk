@@ -175,6 +175,11 @@ public class Player : MonoBehaviour
         {
             transform.Translate(Vector3.forward * 10f * Time.deltaTime);
         }
+
+        if (pState != PlayerState.Attack)
+        {
+            anim.SetInteger("AtkCount", 0);
+        }
     }
 
     void idle()
@@ -302,7 +307,7 @@ public class Player : MonoBehaviour
         
 
         anim.SetInteger("AtkNum", skill.skillNum);
-        //attackDamage = skill.skillSet[skill.skillNum].damage;
+        attackDamage = skill.skillSet[skill.skillNum].damage;
         skill.StartEffect();
     }
 
