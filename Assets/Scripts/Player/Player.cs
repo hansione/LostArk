@@ -27,12 +27,14 @@ public class Player : MonoBehaviour
     public NavMeshAgent agent;
     Animator anim;
     Skill skill;
-
+    
     public float attackDamage;
+    public float addAttackDamage = 0;
     bool isAttack = false;
 
     public Slider hpBar;
     public float hp = 100;
+    public float addHp = 0;
     float maxHp = 100;
    
     private void OnTriggerEnter(Collider other)
@@ -70,10 +72,8 @@ public class Player : MonoBehaviour
         {
             DontDestroyOnLoad(gameObject);
         }
-
-        if (obj.Length != 1)
+        else
         {
-            obj[0].gameObject.transform.position = new Vector3(0f, 0f, -12.39f);
             Destroy(gameObject);
         }
     }
@@ -88,7 +88,7 @@ public class Player : MonoBehaviour
         skill = GetComponent<Skill>();
 
         pState = PlayerState.Idle;
-        attackDamage = 10;
+        attackDamage = 5;
 
     }
 
@@ -294,7 +294,7 @@ public class Player : MonoBehaviour
         }
 
         anim.SetInteger("AtkNum", -1);
-        attackDamage = 10;
+        attackDamage = 5 ;
 
     }
 
@@ -307,8 +307,11 @@ public class Player : MonoBehaviour
         
 
         anim.SetInteger("AtkNum", skill.skillNum);
-        attackDamage = skill.skillSet[skill.skillNum].damage;
+        attackDamage = addAttackDamage + skill.skillSet[skill.skillNum].damage;
+        //attackDamage = skill.skillSet[skill.skillNum].damage;
         skill.StartEffect();
+
+        print(attackDamage);
     }
 
     public void Damaged(float damage, int damagedAnim)

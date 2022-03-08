@@ -809,6 +809,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpBar: {fileID: 777576618}
+  isAttack: 0
   bState: 0
   range: {fileID: 1759210598}
 --- !u!195 &457584618

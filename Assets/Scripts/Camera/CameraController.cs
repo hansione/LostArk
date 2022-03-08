@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    static bool isCamera = false;
+
     Transform player;
 
     // 플레이어 - 카메라 위치

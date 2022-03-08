@@ -20,5 +20,4 @@ public class Item : ScriptableObject
 
     public float hp;
     public float atk;
-    
 }

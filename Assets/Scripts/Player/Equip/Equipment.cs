@@ -15,17 +15,24 @@ public class Equipment : MonoBehaviour
     public Text hpText;
     public Text attackText;
 
-    float hp;
-    public float attack;
+    float initHp;
+    float addHp;
 
-    public Container container;
+    float initAttack;
+    public float addAttack;
+
+    Container container;
 
     private void Start()
     {
+        container = FindObjectOfType<Container>();
         equipSlots = equipBase.GetComponentsInChildren<Slot>();
 
-        hp = player.hp;
-        attack = player.attackDamage;
+        initHp = player.hp;
+        initAttack = player.attackDamage;
+
+        addHp = 0;
+        addAttack = 0;
     }
 
     // Update is called once per frame
@@ -40,16 +47,16 @@ public class Equipment : MonoBehaviour
 
         SetStatus();
 
-        hpText.text = "체력 : " + hp.ToString("F0");
-        attackText.text = "공격력 : " + attack.ToString("F0");
+        hpText.text = "체력 : " + addHp.ToString("F0");
+        attackText.text = "공격력 : " + addAttack.ToString("F0");
     }
 
     public void SetStatus()
     {
-        if(container.isEquip)
+        if (container.isEquip)
         {
-            hp = 100;
-            attack = 10;
+            addAttack = 0;
+            addHp = 0;
 
             for (int i = 0; i < equipSlots.Length; i++)
             {
@@ -58,9 +65,12 @@ public class Equipment : MonoBehaviour
                     continue;
                 }
 
-                attack += equipSlots[i].item.atk;
-                hp += equipSlots[i].item.hp;
+                addAttack += equipSlots[i].item.atk;
+                addHp += equipSlots[i].item.hp;
             }
+
+            player.addHp = initHp + addHp;
+            player.addAttackDamage = initAttack + addAttack; 
 
             container.isEquip = false;
         }

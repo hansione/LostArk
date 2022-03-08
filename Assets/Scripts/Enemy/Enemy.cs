@@ -39,7 +39,7 @@ public class Enemy : MonoBehaviour
             other.tag = "Untagged";
 
             Skill skill = player.gameObject.GetComponent<Skill>();            
-            Damaged(skill.skillSet[skill.skillNum].damage);
+            Damaged(player.gameObject.GetComponent<Player>().attackDamage);
         }
 
 
@@ -63,5 +63,4 @@ public class Enemy : MonoBehaviour
     }
 
     virtual public void Damaged(float damage) { }
-
 }

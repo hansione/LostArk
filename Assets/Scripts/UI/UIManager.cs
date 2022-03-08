@@ -18,7 +18,6 @@ public class UIManager : MonoBehaviour
 
     public GameObject resultImage;
 
-
     private void Awake()
     {
         if (Instance == null)
